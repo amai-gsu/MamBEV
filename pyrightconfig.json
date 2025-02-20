@@ -1,0 +1,30 @@
+{
+  "include": [
+    "projects",
+    "tools",
+  ],
+
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "*.ipynb",
+    "data/*",
+    "workdirs/*",
+    "figs/*"
+  ],
+
+  "ignore": [
+  ],
+
+  "defineConstant": {
+    "DEBUG": true
+  },
+
+  "stubPath": "src/stubs",
+
+  "reportMissingImports": "error",
+  "reportMissingTypeStubs": false,
+
+  "pythonVersion": "3.10",
+  "pythonPlatform": "Linux",
+}
