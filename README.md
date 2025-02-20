@@ -54,10 +54,10 @@ If this work is helpful for your research, please consider citing the following 
 
 # Acknowledgement
 
-Many thanks to these excellent open source projects:
+Built on the shoulders of giants. Many thanks to these excellent open source projects:
 - [dd3d](https://github.com/TRI-ML/dd3d) 
 - [detr3d](https://github.com/WangYueFt/detr3d) 
 - [mmdet3d](https://github.com/open-mmlab/mmdetection3d)
-- [bevformer]()
-- [mamba-ssm]
-- [hydra]
+- [bevformer](https://github.com/fundamentalvision/BEVFormer)
+- [mamba-ssm](https://github.com/state-spaces/mamba)
+- [hydra](https://github.com/goombalab/hydra?tab=readme-ov-file) 
