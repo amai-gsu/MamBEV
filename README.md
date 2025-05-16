@@ -20,8 +20,13 @@ demonstrate MamBEV’s promising performance across diverse visual perception
 metrics, highlighting its advantages in input scaling efficiency compared to existing
 benchmark models.
 
-# Methods
-![method](figs/mamba_arch.png "model arch")
+# Workflow
+![Workflow](figs/high_level_update.png)
+
+# Overall Architecture
+![Overall](figs/overview_arch.png)
+
+
 
 
 # Getting Started
@@ -33,7 +38,7 @@ benchmark models.
 
 | Backbone | Method | Lr Schd | NDS| mAP|memory | Config | Download |
 | :---: | :---: | :---: | :---: | :---:|:---:| :---: | :---: |
-| R50 | MamBEV-tiny | 24ep | 39.9|26.6 | |[config](projects/MAMBEV/configs/inner_block_tests/mix_hydra_slots_inside_el2_50x50_t3_4trav.py) |[model]()/[log]() |
+| R50 | MamBEV-tiny | 24ep | 39.9|26.6 | - |[config](projects/MAMBEV/configs/inner_block_tests/mix_hydra_slots_inside_el2_50x50_t3_4trav.py) |[model]()/[log]() |
 | [R101-DCN](https://github.com/zhiqi-li/storage/releases/download/v1.0/r101_dcn_fcos3d_pretrain.pth)  | MamBEV-small | 24ep | 52.5| 42.2 | - |[config](/home/jackmorris/ICML_BEV/projects/MAMBEV/configs/inner_block_tests/r101_mix_hydra_slots_inside_el4_100x100_t4_4trav.py) |[model]()/[log]() |
 
 # Catalog
@@ -49,7 +54,13 @@ benchmark models.
 If this work is helpful for your research, please consider citing the following BibTeX entry.
 
 ```
-
+@inproceedings{ke2025mambev,
+  title={MamBEV: Enabling State Space Models to Learn Birds-Eye-View Representations},
+  author={Ke, Hongyu and Morris, Jack and Oguchi, Kentaro and Cao, Xiaofei and Liu, Yongkang and Wang, Haoxin and Ding, Yi},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://openreview.net/forum?id=MvEkN2ejZ1}
+}
 ```
 
 # Acknowledgement
