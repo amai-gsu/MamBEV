@@ -50,6 +50,14 @@ benchmark models.
 - [x] Backbones
 
 
+# Support Us
+
+If you find this work useful, please consider:
+
+- Starring the repository 
+- Citing our paper 
+- Contributing to the codebase 
+
 # Bibtex
 If this work is helpful for your research, please consider citing the following BibTeX entry.
 
