@@ -4,26 +4,20 @@
 
 # Train and Test
 
-Train MamBEV-Tiny with 8 GPUs 
+Train MamBEV
 ```
-./tools/dist_train.sh ./projects/configs/bevformer/bevformer_base.py 8
+./tools/dist_train.sh ./path/to/config num_gpu
+
+e.g.
+./tools/dist_train.sh ./projects/configs/MamBEV/mambev_tiny_t3.py 8
 ```
 
-Eval BEVFormer with 8 GPUs
+Eval MamBEV
 ```
-./tools/dist_test.sh ./projects/configs/bevformer/bevformer_base.py ./path/to/ckpts.pth 8
+./tools/dist_test.sh ./path/to/config ./path/to/ckpts.pth num_gpu
 ```
 Note: using 1 GPU to eval can obtain slightly higher performance because continuous video may be truncated with multiple GPUs. By default we report the score evaled with 8 GPUs.
 
-
-
-# Using FP16 to train the model.
-The above training script can not support FP16 training, 
-and we provide another script to train BEVFormer with FP16.
-
-```
-./tools/fp16/dist_train.sh ./projects/configs/bevformer_fp16/bevformer_tiny_fp16.py 8
-```
 
 
 # Visualization 
