@@ -1,6 +1,9 @@
 <div align="center">   
   
 # MamBEV:Enabling State Space Models to Learn Birds-Eye-View Representations
+![Workflow](figs/high_level_update.png)
+> **MamBEV: Enabling State Space Models to Learn Birds-Eye-View Representations**, ICLR 2025,
+> **[Paper](https://arxiv.org/abs/2503.13858)**
 </div>
 
 
@@ -20,8 +23,7 @@ demonstrate MamBEV’s promising performance across diverse visual perception
 metrics, highlighting its advantages in input scaling efficiency compared to existing
 benchmark models.
 
-# Workflow
-![Workflow](figs/high_level_update.png)
+
 
 # Overall Architecture
 ![Overall](figs/overview_arch.png)
