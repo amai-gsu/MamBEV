@@ -68,8 +68,7 @@ If this work is helpful for your research, please consider citing the following 
   title={MamBEV: Enabling State Space Models to Learn Birds-Eye-View Representations},
   author={Ke, Hongyu and Morris, Jack and Oguchi, Kentaro and Cao, Xiaofei and Liu, Yongkang and Wang, Haoxin and Ding, Yi},
   booktitle={The Thirteenth International Conference on Learning Representations},
-  year={2025},
-  url={https://openreview.net/forum?id=MvEkN2ejZ1}
+  year={2025}
 }
 ```
 
