@@ -40,8 +40,8 @@ benchmark models.
 
 | Backbone | Method | Lr Schd | NDS| mAP|memory | Config | Download |
 | :---: | :---: | :---: | :---: | :---:|:---:| :---: | :---: |
-| [R50](https://drive.google.com/file/d/1JTVcrFcOFdPp7rtZ6K__SfF0Np15vXL7/view?usp=sharing) | MamBEV-tiny | 24ep | 39.9|26.6 | - |[config](projects/MAMBEV/configs/MamBEV/mambev_tiny_t3.py) |[model]()/[log]() |
-| [R101-DCN](https://github.com/zhiqi-li/storage/releases/download/v1.0/r101_dcn_fcos3d_pretrain.pth)  | MamBEV-small | 24ep | 52.5| 42.2 | - |[config](projects/MAMBEV/configs/MamBEV/mambev_small_t3.py)|[model](https://drive.google.com/drive/folders/1-MXxszU80aSG4P1_hQnC0qlQOHnPb4iM?usp=drive_link)/[log]() |
+| [R50](https://drive.google.com/file/d/1JTVcrFcOFdPp7rtZ6K__SfF0Np15vXL7/view?usp=sharing) | MamBEV-tiny | 24ep | 39.9|26.6 | - |[config](projects/MAMBEV/configs/MamBEV/mambev_tiny_t3.py) |[model]/[log] |
+| [R101-DCN](https://github.com/zhiqi-li/storage/releases/download/v1.0/r101_dcn_fcos3d_pretrain.pth)  | MamBEV-small | 24ep | 52.5| 42.2 | - |[config](projects/MAMBEV/configs/MamBEV/mambev_small_t3.py)|[model](https://drive.google.com/drive/folders/1-MXxszU80aSG4P1_hQnC0qlQOHnPb4iM?usp=drive_link)/[log] |
 
 # Catalog
 - [ ] MamBEV-Base
