@@ -6,6 +6,7 @@ from .tensor_reshape import (
 )
 from .traversal2d_layer import Traverse2D, batched
 from .ref2int_layer import Ref2Int
+from .global_traversal_layer import GlobalTraversalConstructor
 
 
 __all__ = [
@@ -17,4 +18,5 @@ __all__ = [
     "Traverse2D",
     "Traverse2D",
     "batched",
+    "GlobalTraversalConstructor",
 ]
