@@ -359,6 +359,56 @@ def flatten_input_seq_cpu(
 
     return rearrange(row, "H W -> (H W)"), rearrange(col, "H W -> (H W)")
 
+def _merge_multilevel_values_flattened(
+    lowest_level: torch.Tensor,
+    other_levels: torch.Tensor,
+    insert_points: torch.Tensor,
+):
+    """
+    Merge 2 sequences using points p as a list of insertion points
+    at which to add elements from S to V
+    """
+
+    nt, hw = insert_points.shape
+    bs, ncnt, lhw, c = lowest_level.shape
+    bs, nc, hw, c = other_levels.shape
+
+    new_length = lhw + hw
+    sorted_inserts, offset = torch.sort(insert_points, stable=True)
+
+    # check_insert_bounds(insert_points, new_length)
+    # insert_points[:, offset] = insert_points[:, offset]  + torch.arange(hw, device=insert_points.device, dtype=insert_points.dtype).unsqueeze(0)
+    for i in range(nt):
+        insert_points[i].index_add_(
+            -1,
+            offset[i],
+            torch.arange(hw, device=insert_points.device, dtype=insert_points.dtype),
+        )
+
+    # Create a mask to keep track of insert positions
+    lowest_level = lowest_level.to(other_levels.dtype)
+    insert_points = insert_points.contiguous()
+    mask = torch.ones((nt, new_length), dtype=torch.bool, device=other_levels.device)
+    result = lowest_level.new_zeros(
+        (bs, ncnt, new_length, c),
+    )
+
+    # Mark the insertion points in the mask
+    for i in range(len(insert_points)):
+        mask[i, insert_points[i]] = False
+    mask = rearrange(mask, "nt hw -> (nt hw)")
+    value_insert_points = mask.nonzero()
+    value_insert_points = rearrange(
+        value_insert_points.squeeze(-1), "(nt hw)->nt hw", nt=nt
+    )
+    mask = rearrange(mask, "(nt hw)->nt hw", nt=nt)
+    for ci in range(nc):
+        for trav in range(nt):
+            result[:, ci * nt + trav, mask[trav]] = lowest_level[:, ci * nt + trav]
+            result[:, ci * nt + trav, insert_points[trav]] = other_levels[:, ci]
+
+    return result, insert_points, mask
+
 
 def merge_multilevel_values_flattened(
     lowest_level: torch.Tensor,
